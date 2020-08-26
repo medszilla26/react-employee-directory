@@ -5,7 +5,9 @@ function TableBody(props) {
   return (
     <tbody>
       <tr>
-        <th scope="row">{props.id}</th>
+        <th scope="row">
+          <img alt={props.name} src={props.image} />
+        </th>
         <td>{props.firstName}</td>
         <td>{props.lastName}</td>
         <td>{props.email}</td>

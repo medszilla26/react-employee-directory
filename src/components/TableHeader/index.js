@@ -6,7 +6,7 @@ function TableHeader() {
     <thead>
       <tr>
         <th scope="col">
-          <strong>id</strong>
+          <strong></strong>
         </th>
         <th scope="col">
           <strong>First</strong>
