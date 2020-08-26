@@ -10,12 +10,6 @@ function TableHeader(props) {
         </th>
         <th scope="col">
           <strong>First </strong>
-          <span
-            onClick={() => props.handleToggle(props.firstName)}
-            className="sort"
-          >
-            v
-          </span>
         </th>
         <th scope="col">
           <strong>Last</strong>
