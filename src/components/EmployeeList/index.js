@@ -1,7 +1,6 @@
 import React from "react";
-import "./style.css";
 
-function TableBody(props) {
+function EmployeeList(props) {
   return (
     <tbody>
       <tr>
@@ -17,4 +16,4 @@ function TableBody(props) {
   );
 }
 
-export default TableBody;
+export default EmployeeList;

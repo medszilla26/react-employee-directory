@@ -4,7 +4,7 @@ import "./style.css";
 function TableHeader() {
   return (
     <thead>
-      <tr>
+      <tr className="topBar">
         <th scope="col">
           <strong></strong>
         </th>

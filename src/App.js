@@ -3,9 +3,10 @@ import React, { Component } from "react";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import employees from "./utils/employees.json";
-import TableWrap from "./components/TableWrap";
+
 import TableHeader from "./components/TableHeader";
-import TableBody from "./components/TableBody";
+
+import EmployeeList from "./components/EmployeeList";
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
@@ -47,10 +48,10 @@ class App extends Component {
     return (
       <Wrapper>
         <Title>Employee Directory</Title>
-        <TableWrap>
+        <table className="table">
           <TableHeader />
           {this.state.employees.map((employee) => (
-            <TableBody
+            <EmployeeList
               id={employee.id}
               key={employee.id}
               firstName={employee.firstName}
@@ -60,7 +61,7 @@ class App extends Component {
               phone={employee.phone}
             />
           ))}
-        </TableWrap>
+        </table>
       </Wrapper>
     );
   }
