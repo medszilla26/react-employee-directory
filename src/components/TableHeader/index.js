@@ -1,15 +1,21 @@
 import React from "react";
 import "./style.css";
 
-function TableHeader() {
+function TableHeader(props) {
   return (
-    <thead>
-      <tr className="topBar">
+    <thead className="thead-dark">
+      <tr>
         <th scope="col">
           <strong></strong>
         </th>
         <th scope="col">
-          <strong>First</strong>
+          <strong>First </strong>
+          <span
+            onClick={() => props.handleToggle(props.firstName)}
+            className="sort"
+          >
+            v
+          </span>
         </th>
         <th scope="col">
           <strong>Last</strong>
