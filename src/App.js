@@ -1,8 +1,11 @@
 import React, { Component } from "react";
-import EmployeeCard from "./components/EmployeeCard";
+// import EmployeeCard from "./components/EmployeeCard";
 import Wrapper from "./components/Wrapper";
 import Title from "./components/Title";
 import employees from "./utils/employees.json";
+import TableWrap from "./components/TableWrap";
+import TableHeader from "./components/TableHeader";
+import TableBody from "./components/TableBody";
 
 class App extends Component {
   // Setting this.state.employees to the employees json array
@@ -20,24 +23,46 @@ class App extends Component {
   };
 
   // Map over this.state.employees and render a employeeCard component for each employee object
+  //   render() {
+  //     return (
+  //       <Wrapper>
+  //         <Title>Employee List</Title>
+  //         {this.state.employees.map((employee) => (
+  //           <EmployeeCard
+  //             id={employee.id}
+  //             key={employee.id}
+  //             firstName={employee.firstName}
+  //             lastName={employee.lastName}
+  //             image={employee.image}
+  //             email={employee.email}
+  //             phone={employee.phone}
+  //           />
+  //         ))}
+  //       </Wrapper>
+  //     );
+  //   }
+  // }
+
   render() {
     return (
       <Wrapper>
-        <Title>Employee List</Title>
-        {this.state.employees.map((employee) => (
-          <EmployeeCard
-            removeemployee={this.removeEmployee}
-            id={employee.id}
-            key={employee.id}
-            name={employee.name}
-            image={employee.image}
-            occupation={employee.occupation}
-            location={employee.location}
-          />
-        ))}
+        <Title>Employee Directory</Title>
+        <TableWrap>
+          <TableHeader />
+          {this.state.employees.map((employee) => (
+            <TableBody
+              id={employee.id}
+              key={employee.id}
+              firstName={employee.firstName}
+              lastName={employee.lastName}
+              image={employee.image}
+              email={employee.email}
+              phone={employee.phone}
+            />
+          ))}
+        </TableWrap>
       </Wrapper>
     );
   }
 }
-
 export default App;
