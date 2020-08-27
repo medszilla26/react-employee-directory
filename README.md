@@ -7,7 +7,6 @@ https://medszilla26.github.io/react-employee-directory/
 ## Screenshot
 
 ![React Employee Directory](/public/app.png)
-Format: ![app screenshot]
 
 ## Description
 
