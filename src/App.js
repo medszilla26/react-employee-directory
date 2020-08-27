@@ -1,25 +1,42 @@
 import React, { Component } from "react";
-
 import Header from "./components/Header";
 import Wrapper from "./components/Wrapper";
 import Footer from "./components/Footer";
 import employees from "./utils/employees.json";
 import TableHeader from "./components/TableHeader";
 import EmployeeList from "./components/EmployeeList";
+import SearchForm from "./components/SearchForm";
 
 class App extends Component {
   state = {
     employees,
-    sorted: false,
+    result: {},
+    search: "",
   };
 
-  // handleToggle = () => {
-  //   if (this.state.sorted) {
-  //     this.props.sort("asc");
-  //   } else {
-  //     this.props.sort("desc");
-  //   }
-  //   this.setState({ sorted: !this.state.sorted });
+  // componentDidMount() {
+  //   this.searchEmployee();
+  // }
+
+  // searchEmployee = (query) => {
+  //   employees
+  //     .search(query)
+  //     .then((res) => this.setState({ result: res.data }))
+  //     .catch((err) => console.log(err));
+  // };
+
+  // handleInputChange = (event) => {
+  //   const value = event.target.value;
+  //   const firstName = event.target.firstName;
+  //   this.setState({
+  //     [firstName]: value,
+  //   });
+  // };
+
+  // // When the form is submitted, search the OMDB API for the value of `this.state.search`
+  // handleFormSubmit = (event) => {
+  //   event.preventDefault();
+  //   this.searchEmployee(this.state.search);
   // };
 
   render() {
@@ -27,6 +44,11 @@ class App extends Component {
       <div>
         {" "}
         <Header />
+        <SearchForm
+          value={this.state.search}
+          handleInputChange={this.handleInputChange}
+          handleFormSubmit={this.handleFormSubmit}
+        />
         <Wrapper>
           <table className="table">
             <TableHeader />

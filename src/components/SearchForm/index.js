@@ -1,20 +1,24 @@
 import React from "react";
+import "./style.css";
 
 function SearchForm(props) {
   return (
     <form>
       <div className="form-group">
-        <label htmlFor="search">Search:</label>
+        <label htmlFor="search"></label>
         <input
           onChange={props.handleInputChange}
-          value={props.value}
-          name="search"
+          value={props.search}
+          name="term"
           type="text"
           className="form-control"
-          placeholder="Search for Employee"
-          id="search"
+          placeholder="Search for an employee"
+          id="term"
         />
-        <button onClick={props.hadleFormSubmit} className="btn btn-primary">
+        <button
+          onClick={props.handleFormSubmit}
+          className="btn btn-danger mt-2 ml-2"
+        >
           Search
         </button>
       </div>
